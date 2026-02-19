@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_title %} Add Task {% endblock %}
+{% block page_style %}
+<link rel="stylesheet" href="{% static "taskyapp/nav.css" %}">
+<link rel="stylesheet" href="{% static "taskyapp/add_task.css" %}">
+<link rel="stylesheet" href="{% static "taskyapp/style.css" %}">
+{% endblock %}
+
+
+{% block page_content %}
+{% include "taskyapp/includes/nav.html" %}
+
+    <div class='form-container' >
+
+        <form class='add-form' action="{% url "add-task" %}" method="post" >
+            {% csrf_token %}
+
+            <h1 class='form-title' >add task</h1>
+            {% for field in form %}
+                <div class='field-box' >
+                    <p>{{ field.label }}</p>
+                    {{ field }}
+                </div>
+
+            {% endfor %}
+
+            
+
+            <button class='task-submit-button' type='submit' >Send</button>
+
+        </form>
+
+
+    </div>
+
+ 
+
+{% endblock %}
+

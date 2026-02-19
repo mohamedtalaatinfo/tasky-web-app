@@ -1,11 +1,127 @@
 
 .major-container {
-    background-color: gray;
     width: 100%;
     height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
 }
+
+
+.main-container {
+    /* border: solid 0.5px black; */
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-container h1 {
+    font-size: 3em;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    
+}
+
+.task-record {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    border: solid 0.5px black;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin: 5px 0px;
+    transition: 0.15s ease-in-out;
+
+}
+
+.task-record:hover,
+.task-record:active {
+    background-color: black;
+    color: white;
+}
+
+.task-title a {
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+}
+
+.task-title,
+.task-index-number,
+.task-checkmark {
+    color: inherit;
+    background-color: inherit;
+}
+
+.task-title {
+    text-align: start;
+    width: 70%;
+}
+
+.task-stars {
+    background-color: inherit;
+    color: inherit;
+}
+
+.task-checkmark {
+    width: 25px;
+    cursor: pointer;
+}
+
+
+
+.task-submit-button {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+    background-color: black;
+    border: solid 0.5px black;  
+    border-radius: 5px;
+    padding: 10px 5px;
+    transition: 0.15s ease-in-out;    
+}
+
+.task-submit-button:hover,
+.task-submit-button:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+
+.task-add-button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 3em;
+    color: black;
+    background-color: initial;
+    border: solid 0.5px black;  
+    border-radius: 5px;
+    padding: 10px 5px;
+    transition: 0.15s ease-in-out;    
+    
+}
+
+.task-add-button a {
+    text-decoration: none;
+    background-color: inherit;
+    color: inherit;
+    transition: 0.09s ease-in;
+}
+
+
+
+
+.task-add-button:active,
+.task-add-button:hover {
+    background-color: black;
+    color: white;
+}
+
+
 
 

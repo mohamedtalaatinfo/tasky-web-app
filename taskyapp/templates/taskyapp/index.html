@@ -16,10 +16,46 @@
 
     <div class='major-container' >
 
+        <form action="">
+
         <div class='main-container' >
-            <h1> Header test </h1>
+            <h1>all tasks</h1>
+            {% for task in data %}
+
+
+                <div class='task-record' >
+                    <p class='task-index-number' >{{ task.pk }} . </p>
+
+                    <p class='task-title' >
+                        <a href="{% url "task-details"  task.pk %}">{{ task.title }}</a>
+                    </p>
+
+                    <p class='task-stars' > |⭐ {{ task.priority }} | </p>
+
+                    {% if task.complished %}
+                        <input  class='task-checkmark' type="checkbox" value='True'  checked >
+                    {% else %}
+                        <input  class='task-checkmark' type="checkbox" value='True' >
+                    {% endif %}
+                </div>
+
+
+            {% endfor %}
+
+            <button  class='task-add-button' type='button' > <a href="{% url "add-task" %}">+</a> </button>
+        
+            <button  class='task-submit-button' type='submit' > Delete Task </button>
+
+            </form>
+
         </div>
+
+
+
 
     </div>
     
 {% endblock %}
+
+
+

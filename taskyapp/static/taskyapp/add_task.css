@@ -1,0 +1,51 @@
+.form-container {
+    width: 100%;
+    height: 80vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+
+.add-form {
+    border: solid 0.5px black;
+    border-radius: 10px;
+    padding: 30px 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    
+
+}
+
+
+.form-title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 3em;
+    margin-bottom: 30px;
+
+}
+
+
+.field-box p {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.field-box input,
+.field-box textarea {
+    width: 100%;
+    height: 40px;
+    font-size: 1.3em;
+    border: solid 0.5px gray;
+    border-radius: 10px;
+    padding-left: 10px;
+
+}
+
+
+.field-box textarea {
+    height: auto;
+}
+
+

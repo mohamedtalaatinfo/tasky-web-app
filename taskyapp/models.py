@@ -11,8 +11,12 @@ class TaskyModel(models.Model):
       MaxValueValidator(5)  
     ])
 
-    task = models.CharField(max_length=200)
-    complished = models.BooleanField(default=True)
+    task = models.TextField(max_length=200)
+    complished = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title} - {self.priority} - {self.complished}"
+    
+    class Meta:
+        verbose_name = 'Tasky Model'
+        verbose_name_plural = 'Tasky Model'

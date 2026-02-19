@@ -4,9 +4,9 @@ from .models import TaskyModel
 
 
 class TaskyModelAdmin(admin.ModelAdmin):
-    list_display = ['title', 'date', 'priority', 'task', 'complished']
+    list_display = ['title', 'date', 'priority', 'complished']
     list_filter = ['date', 'priority', 'complished']
 
-    
+
 
 admin.site.register(TaskyModel, TaskyModelAdmin)

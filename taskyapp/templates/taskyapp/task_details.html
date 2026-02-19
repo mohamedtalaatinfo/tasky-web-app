@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %} {{ task.title }} {% endblock %}
+{% block page_style %}
+<link rel="stylesheet" href="{% static "taskyapp/nav.css" %}">
+<link rel="stylesheet" href="{% static "taskyapp/task_details.css" %}">
+{% endblock %}
+
+
+
+{% block page_content %}
+{% include "taskyapp/includes/nav.html" %}
+
+    <div class='task-details-container'>
+
+        <h1>{{ task.title }}</h1>
+        <div class='under-title' >
+            <p>{{ task.date }}</p>
+            <p class='task-details-priority' > |⭐{{ task.priority }}|</p>
+            <p>{{ task.complished }}</p>
+        </div>
+        <p class='task-details-task' >{{ task.task }}</p>
+        
+
+    </div>
+
+{% endblock %}

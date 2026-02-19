@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static  %}
+
+
+{% block page_title %} IndexHome {% endblock %}
+{% block page_style %}
+<link rel="stylesheet" href="{% static "taskyapp/style.css" %}">
+<link rel="stylesheet" href="{% static "taskyapp/nav.css" %}">
+
+{% endblock %}
+
+
+{% block page_content %}
+
+    {% include 'taskyapp/includes/nav.html' %}
+
+    <div class='major-container' >
+
+        <div class='main-container' >
+            <h1> Header test </h1>
+        </div>
+
+    </div>
+    
+{% endblock %}

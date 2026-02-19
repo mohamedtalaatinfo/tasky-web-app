@@ -1,0 +1,79 @@
+
+.main-header {
+    color: black;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 0.5px black;
+
+    margin-bottom: 50px;
+
+}
+
+.left-side {
+    display: flex;
+    border: solid 0.5px black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+}
+
+.logo p {
+
+    font-size: 2.5em;
+    font-weight: bolder;
+    background-color: black;
+    color: white;
+    padding: 0px 10px;
+    border: solid 0.5 black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    
+
+}
+
+.logo-name {
+    align-content: end;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    
+}
+
+
+
+.right-side a {
+    text-decoration: none;
+    background-color: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.right-side button {
+    font-size: 1.5em;
+    border: solid 0.5px black;
+    width: 130px;
+    padding: 5px 0px;
+    border-radius: 3px;
+    margin: 0px 6px;
+    transition: 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+
+.right-side button:hover,
+.right-side button:active {
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+
+
+

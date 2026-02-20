@@ -12,7 +12,7 @@ class TaskyModel(models.Model):
     ])
 
     task = models.TextField(max_length=200)
-    complished = models.BooleanField(default=False)
+    complished = models.BooleanField(default=False, editable=False)
 
     def __str__(self):
         return f"{self.title} - {self.priority} - {self.complished}"
@@ -20,3 +20,16 @@ class TaskyModel(models.Model):
     class Meta:
         verbose_name = 'Tasky Model'
         verbose_name_plural = 'Tasky Model'
+
+
+
+class ComplishedTaskModel(models.Model):
+    title = models.CharField(max_length=50)
+    date = models.CharField(max_length=70)
+    priority = models.IntegerField()
+    task = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.title}| ⭐{self.priority}"
+    
+    

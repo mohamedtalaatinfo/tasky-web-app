@@ -49,3 +49,27 @@
 }
 
 
+.error-message ul {
+    
+    list-style-type: none;
+    color: red;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px;
+
+
+}
+
+.error-message li {
+    background-color: inherit;
+    color: inherit;
+
+}
+
+
+.error-box {
+    border: solid 0.5px red;
+    background-color: rgba(255, 65, 65, 0.614);
+    
+}

@@ -81,11 +81,13 @@
     text-decoration: none;
     font-size: 1.5em;
     transition: 0.15s ease;
+    margin-right: 15px;
 
 }
 
 .mid-buttons:hover,
 .mid-buttons:active {
     font-weight: bold;
+
 
 }

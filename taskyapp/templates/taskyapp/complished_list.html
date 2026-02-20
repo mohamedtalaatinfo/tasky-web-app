@@ -2,7 +2,7 @@
 {% load static  %}
 
 
-{% block page_title %} IndexHome {% endblock %}
+{% block page_title %} Complished Tasks {% endblock %}
 {% block page_style %}
 <link rel="stylesheet" href="{% static "taskyapp/style.css" %}">
 <link rel="stylesheet" href="{% static "taskyapp/nav.css" %}">
@@ -16,10 +16,9 @@
 
     <div class='major-container' >
 
-        <form action="complished-task/" method='post' >
-            {% csrf_token %}
+    
         <div class='main-container' >
-            <h1>all tasks</h1>
+            <h1>all Complished Tasks</h1>
             {% for task in data %}
 
 
@@ -27,22 +26,16 @@
                     <p class='task-index-number' >{{ task.pk }} . </p>
 
                     <p class='task-title' >
-                        <a href="{% url "task-details"  task.pk %}">{{ task.title }}</a>
+                        <a href="{% url "complished-details"  task.pk %}">{{ task.title }}</a>
                     </p>
 
                     <p class='task-stars' > |⭐ {{ task.priority }} | </p>
 
-                    <input  class='task-checkmark' type="checkbox" value={{ task.pk }} name='mark-box' >
                 </div>
 
 
             {% endfor %}
 
-            <button  class='task-add-button' type='button' > <a href="{% url "add-task" %}">+</a> </button>
-        
-            <button  class='task-submit-button' type='submit'  > Complished ✅ </button>
-
-            </form>
 
         </div>
 

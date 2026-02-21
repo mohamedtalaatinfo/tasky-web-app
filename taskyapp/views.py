@@ -1,11 +1,15 @@
 from ast import Delete
 from collections.abc import Sequence
+from typing import Any
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.views import View
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from .models import ComplishedTaskModel, TaskyModel
+
 
 # Create your views here.
 
@@ -27,7 +31,7 @@ class TaskDetailsView(DetailView):
 
 
 class ComplishedDetailsView(DetailView):
-    template_name = "taskyapp/task_details.html"
+    template_name = "taskyapp/complished_details.html"
     model = ComplishedTaskModel
     context_object_name = "task"
 
@@ -35,7 +39,7 @@ class ComplishedDetailsView(DetailView):
 class AddTaskView(CreateView):
     model = TaskyModel
     template_name = "taskyapp/add_task.html"
-    fields = ['title', 'priority', 'task', 'complished']
+    fields = ['title', 'priority', 'task']
     success_url = '/'
 
 
@@ -43,6 +47,7 @@ class AddTaskView(CreateView):
 class ComplishedTasksView(View):
     def post(self, request):
         data =  request.POST.getlist('mark-box')
+        print(data)
         for idd in data:
             record = TaskyModel.objects.get(pk=idd)
             title = record.title
@@ -69,3 +74,34 @@ class ComplishedListView(View):
             "data": data
         })
     
+
+
+class EditeTaskView(UpdateView):
+    model = TaskyModel
+    fields = ['title', 'priority', 'task']
+    template_name = 'taskyapp/edite_task.html'
+    success_url = '/'
+
+
+    
+    # def get(self, request, pk):
+    #     task = TaskyModel.objects.get(pk=pk)
+    #     print(task.task)
+
+
+
+    #     return render(request, "taskyapp/edite_task.html", {
+    #         'task': task
+    #     })
+    
+
+    # def post(self, request, pk):
+    #     title = request.POST.get('title')
+    #     priority = request.POST.get('priority')
+    #     task = request.POST.get('task')
+
+    #     print(title, priority, task, sep='\n')
+
+    #     TaskyModel.objects.update(title=title, priority=priority, task=task)
+
+    #     return HttpResponseRedirect('/')

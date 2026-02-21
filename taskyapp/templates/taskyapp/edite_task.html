@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_title %} Edite Task {% endblock %}
+{% block page_style %}
+<link rel="stylesheet" href="{% static "taskyapp/nav.css" %}">
+<link rel="stylesheet" href="{% static "taskyapp/add_task.css" %}">
+<link rel="stylesheet" href="{% static "taskyapp/style.css" %}">
+{% endblock %}
+
+
+{% block page_content %}
+{% include "taskyapp/includes/nav.html" %}
+
+    <div class='form-container' >
+
+        <form class='add-form' action="{% url "edite-task"  object.pk %}" method="post" >
+            {% csrf_token %}
+
+            <h1 class='form-title' >Edite task</h1>
+
+            <div class='error-message' >
+                {{ form.errors }}
+
+            </div>
+            
+            <div class='field-box' >
+                <p><label for="title"> Title </label></p>
+                <input id='title' type="text" name='title' value="{{object.title}}" >
+            </div>
+
+            <div class='field-box' >
+                <p><label for="priority">Priority</label></p>
+                <input id='priority' type="text" name='priority' value="{{ object.priority }}" >
+            </div>
+
+
+            <div class='field-box' >
+                <p><label for="edite-task">Task</label></p>
+                <textarea name="task" id="edite-task"  > {{ object.task }} </textarea>
+            </div>
+
+
+            
+
+            <button class='task-submit-button' type='submit' >Send</button>
+
+        </form>
+
+
+    </div>
+
+ 
+
+{% endblock %}
+
+

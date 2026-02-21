@@ -22,8 +22,41 @@
 }
 
 
+
+.task-details-buttons-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.task-details-buttons-box a {
+    text-decoration: none;
+    text-align: left;
+    font-size: 1.5em;
+    background-color: black;
+    color: white;
+    border: solid 0.5px black;
+    width: 200px;
+    padding: 10px 0px;
+    border-radius: 3px;
+    margin-top: 50px;
+    transition: 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+.task-details-buttons-box a:hover,
+.task-details-buttons-box a:active {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
 .task-details-task {
     font-size: 2.5em;
-    padding: 0px 200px;
+    padding: 10px 100px;
     text-align: left;
+
 }

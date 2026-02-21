@@ -18,26 +18,12 @@
         <div class='under-title' >
             <p>{{ task.date }}</p>
             <p class='task-details-priority' > |⭐{{ task.priority }}|</p>
-            {% if not task.complished %}
-                <p>Not Finished</p>
-            {% endif %}
-
+            <p>completed ✅</p>
+            
         </div>
         <p class='task-details-task' >{{ task.task }}</p>
-
-
-
-        
-            <div class='task-details-buttons-box' >
-                
-                <a   class='task-details-buttons-box'  href="{% url "edite-task" task.id  %}">edite</a>
-                
-            </div>
-        
-        
 
 
     </div>
 
 {% endblock %}
-
